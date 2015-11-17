@@ -1,25 +1,26 @@
----
-title       : Pridicting Stature by Foot Length  
+---  
+title       : Predicting Stature by Foot Length  
 subtitle    : with shinyapp
 author      : Sergey Cherkasov
 job         : 
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+framework   : revealjs      # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
----
+--- 
 
-## Read-And-Delete
+# Predicting Stature
+## by Foot Length
+#### with shinyapp
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+###### created by Sergey Cherkasov
+###### as part of Developing Data Product course 
 
 --- .class #id 
 
-## Slide 2
+# Preamble
 
 
 
