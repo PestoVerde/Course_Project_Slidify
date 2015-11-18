@@ -19,7 +19,7 @@ knit        : slidify::knit2slides
 <p>created by Sergey Cherkasov</p>
 <p>as part of Developing Data Product course </p>
 
---- .class #id 
+---  
 
 # Preamble
 
