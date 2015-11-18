@@ -9,19 +9,60 @@ hitheme     : tomorrow      #
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+
 --- 
 
 # Predicting Stature
 ## by Foot Length
 #### with shinyapp
 
-###### created by Sergey Cherkasov
-###### as part of Developing Data Product course 
+<p>created by Sergey Cherkasov</p>
+<p>as part of Developing Data Product course </p>
 
 --- .class #id 
 
 # Preamble
 
+This presentation is a second part of Developing Data Products course. The first part is shiny application which can be found [here](https://pestoverde.shinyapps.io/Developing-Data-Products).
 
+Data for this application can be found at the site of [Department of Statistics](http://www.stat.ufl.edu/~winner/data/stature_hand_foot.dat) (University of Florida).
 
+Original files of this presentation can be found on [github.com](https://github.com/PestoVerde/Course_Project_Slidify)
 
+--- 
+# Application
+
+The application provides interaction with simple linear model which predict the heigth of a person by size of his/her foot.
+
+To use the application you need to choose the gender of a person with radio button. Then you can use slider to adjust size of a foot. Big green dot shows the prediction.
+
+The app consist interactive part with the plot and documentation part with brief explanations.
+
+Original files can be found on [github.com](https://github.com/PestoVerde/Developing-Data-Products)
+
+--- 
+# Data
+```{r, echo=F}
+data <- read.table("data.csv")
+data <- data[,-c(1,4)]
+names(data) <- c("gender", "stature", "foot_length")
+data$gender[data$gender==1] <- "Male"
+data$gender[data$gender==2] <- "Female"
+data$gender <- as.factor(data$gender)
+data$stature <- data$stature/10
+```
+Data contains <span style="color:red">`r dim(data)[1]`</span> observations with <span style="color:red">`r dim(data)[2]+2`</span> variations each. We remove useless numbers of observations.
+
+The original data contains also hand length of the person. If we used it in our model it improved the prediction for about 5%. But we avoid this variance for the sake of <span style="color:red">brilliant simplicity of the application interface</span> and <span style="color:red">reducing the burden of server</span>.
+
+--- 
+
+# Model
+
+More <span style="color:red">R</span> expression that got evaluated and displayed.
+```{r, echo=T}
+fit <- lm(stature ~ ., data)
+summary(fit)
+```
+
+As we can see the model discribes <span style="color:red">82%</span> of variance.

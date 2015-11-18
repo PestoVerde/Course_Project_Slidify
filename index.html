@@ -24,14 +24,69 @@
 
 <h4>with shinyapp</h4>
 
-<h6>created by Sergey Cherkasov</h6>
+<p>created by Sergey Cherkasov</p>
 
-<h6>as part of Developing Data Product course</h6>
+<p>as part of Developing Data Product course </p>
 
 </section>
 <section class='class' data-state='' id='id'>
   <h1>Preamble</h1>
-  
+  <p>This presentation is a second part of Developing Data Products course. The first part is shiny application which can be found <a href="https://pestoverde.shinyapps.io/Developing-Data-Products">here</a>.</p>
+
+<p>Data for this application can be found at the site of <a href="http://www.stat.ufl.edu/%7Ewinner/data/stature_hand_foot.dat">Department of Statistics</a> (University of Florida).</p>
+
+<p>Original files of this presentation can be found on <a href="https://github.com/PestoVerde/Course_Project_Slidify">github.com</a></p>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h1>Application</h1>
+  <p>The application provides interaction with simple linear model which predict the heigth of a person by size of his/her foot.</p>
+
+<p>To use the application you need to choose the gender of a person with radio button. Then you can use slider to adjust size of a foot. Big green dot shows the prediction.</p>
+
+<p>The app consist interactive part with the plot and documentation part with brief explanations.</p>
+
+<p>Original files can be found on <a href="https://github.com/PestoVerde/Developing-Data-Products">github.com</a></p>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h1>Data</h1>
+  <p>Data contains <span style="color:red">155</span> observations with <span style="color:red">5</span> variations each. We remove useless numbers of observations.</p>
+
+<p>The original data contains also hand length of the person. If we used it in our model it improved the prediction for about 5%. But we avoid this variance for the sake of <span style="color:red">brilliant simplicity of the application interface</span> and <span style="color:red">reducing the burden of server</span>.</p>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h1>Model</h1>
+  <p>More <span style="color:red">R</span> expression that got evaluated and displayed.</p>
+
+<pre><code class="r">fit &lt;- lm(stature ~ ., data)
+summary(fit)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = stature ~ ., data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -9.7055 -2.6147  0.1318  1.9285 13.0125 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 84.69370    6.14796  13.776  &lt; 2e-16 ***
+## genderMale   6.18123    0.96623   6.397 1.85e-09 ***
+## foot_length  0.32062    0.02612  12.277  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.965 on 152 degrees of freedom
+## Multiple R-squared:  0.824,  Adjusted R-squared:  0.8217 
+## F-statistic: 355.9 on 2 and 152 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+
+<p>As we can see the model discribes <span style="color:red">82%</span> of variance.</p>
+
 </section>
     </div>
   </div>
